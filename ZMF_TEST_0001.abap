@@ -9,10 +9,10 @@ FUNCTION zmf_test_0001.
 
   DATA: lv_maktx TYPE maktx.
 
-  SELECT SINGLE maktx
-    FROM makt
-    INTO lv_maktx
-    WHERE spras EQ sy-langu
-      AND matnr EQ iv_matnr.
+  SELECT SINGLE materialname
+    FROM I_MaterialText
+    INTO @lv_maktx
+    WHERE language     EQ @sy-langu
+      AND materialname EQ @iv_matnr.
 
 ENDFUNCTION.
